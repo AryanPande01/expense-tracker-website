@@ -1,0 +1,196 @@
+/* DetailedHistory.css */
+.detailed-history-container {
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  width: 90%;
+  max-width: 700px;
+  margin: 5% auto;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  text-align: center;
+  color: #222;
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  animation: fadeInUp 0.8s cubic-bezier(.23,1.02,.32,1) both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.transaction-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 28px;
+  color: #222;
+}
+
+.transaction-list > li > strong {
+  font-size: 1.2rem;
+  color: #7c3aed;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.7);
+  margin-bottom: 14px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(124,58,237,0.08);
+  transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgba(124,58,237,0.08);
+}
+
+.transaction-item:hover {
+  transform: scale(1.025) translateY(-2px);
+  box-shadow: 0 6px 24px rgba(124,58,237,0.13);
+  background: rgba(255,255,255,0.95);
+}
+
+.img-btn {
+  background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(124,58,237,0.13);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.img-btn:hover {
+  background: linear-gradient(90deg, #a78bfa 0%, #7c3aed 100%);
+  transform: scale(1.12);
+}
+
+.back-btn {
+  margin-top: 28px;
+  padding: 12px 32px;
+  background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(124,58,237,0.13);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.back-btn:hover {
+  background: linear-gradient(90deg, #a78bfa 0%, #7c3aed 100%);
+  transform: scale(1.04);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeInModal 0.4s cubic-bezier(.23,1.02,.32,1) both;
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content {
+  background: rgba(255,255,255,0.95);
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(124,58,237,0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.5s cubic-bezier(.23,1.02,.32,1) both;
+}
+
+.modal-content img {
+  max-width: 60vw;
+  max-height: 60vh;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(124,58,237,0.13);
+  margin-bottom: 1.2rem;
+  transition: box-shadow 0.2s;
+}
+
+.modal-img {
+  display: block;
+  max-width: 60vw;
+  max-height: 60vh;
+  margin: 0 auto 1.2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(124,58,237,0.13);
+  background: rgba(255,255,255,0.7);
+  object-fit: contain;
+  transition: box-shadow 0.2s;
+}
+
+.close-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(90deg, #e74c3c 0%, #fbbf24 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(231,76,60,0.13);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.close-btn:hover {
+  background: linear-gradient(90deg, #fbbf24 0%, #e74c3c 100%);
+  transform: scale(1.07);
+}
+
+@media (max-width: 700px) {
+  .detailed-history-container {
+    width: 98%;
+    padding: 1.2rem 0.5rem;
+  }
+  .modal-content {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+  }
+  .modal-content img {
+    max-width: 90vw;
+    max-height: 40vh;
+  }
+  .modal-img {
+    max-width: 90vw;
+    max-height: 40vh;
+  }
+}
